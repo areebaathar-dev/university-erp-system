@@ -1,72 +1,103 @@
-# University ERP System
+# 🎓 University ERP System
 
-A multi-role Enterprise Resource Planning (ERP) system for university administration, built with PHP and MySQL. Supports distinct dashboards and permissions for admins, staff, teachers, and students, with a focus on secure data handling and a clean, modern interface.
+A role-based University ERP (Enterprise Resource Planning) system for managing students, faculty, attendance, marks, and fee records — built with **PHP and MySQL**.
 
-## Features
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-8511FA?style=flat&logo=bootstrap&logoColor=white)
 
-- **Multi-role access control** — separate dashboards and permissions for Admin, Teacher, and Student roles
-- **Fee management** — printable, styled fee receipts
-- **Academic tracking** — student records, results, and course management
-- **Interactive data tables** — sortable, searchable tables via DataTables
-- **Data visualization** — charts and analytics via Chart.js
-- **Modern UI** — dark sidebar navigation built on Bootstrap 5
-- **User-friendly alerts** — SweetAlert2 for confirmations and notifications
-- **Secure database access** — parameterized/prepared statements throughout to prevent SQL injection
+---
 
-## Tech Stack
+## 📖 Overview
 
-| Layer | Technology |
-|---|---|
-| Backend | PHP |
-| Database | MySQL |
-| Frontend | Bootstrap 5, HTML, CSS, JavaScript |
-| UI Libraries | Chart.js, DataTables, SweetAlert2 |
+University ERP System is a multi-role web application that centralizes academic and administrative operations for a university — covering admin, faculty, student, and accountant workflows in one system.
 
-## Getting Started
+---
+
+## ✨ Features
+
+- Role-based login (Admin, Faculty, Student, Accountant)
+- Student attendance management
+- Marks and grading system
+- Fee record management
+- Centralized relational database
+- Reporting modules per role
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer      | Technology         |
+|------------|---------------------|
+| Backend    | PHP                 |
+| Database   | MySQL                |
+| Frontend   | HTML, CSS, Bootstrap 5 |
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- PHP 7.4+ (or XAMPP/WAMP/MAMP for local development)
-- MySQL 5.7+
-- A web server (Apache/Nginx) or PHP's built-in server
+- [XAMPP](https://www.apachefriends.org/) or WAMP installed
+- PHP 7.4+ and MySQL
 
 ### Installation
-
-1. Clone the repository
-   ```bash
+1. Clone the repo into your `htdocs` (XAMPP) or `www` (WAMP) folder:
+```bash
    git clone https://github.com/areebaathar-dev/university-erp-system.git
-   cd university-erp-system
-   ```
-
-2. Import the database
-   - Create a MySQL database
-   - Import the provided `.sql` schema file into it
-
-3. Configure database credentials
-   - Copy the sample config file and update it with your database name, username, and password
-
-4. Run the app
-   - Point your local server (Apache/XAMPP) to the project folder, or run:
-     ```bash
-     php -S localhost:8000
-     ```
-   - Visit `http://localhost:8000` in your browser
-
-## Project Structure
-
 ```
+2. Start Apache and MySQL from your XAMPP/WAMP control panel
+3. Create a database and import the schema:
+```bash
+   mysql -u root -p university_erp < database/schema.sql
+```
+4. Copy the config template and add your local DB credentials:
+```bash
+   cp config/db.example.php config/db.php
+```
+5. Visit `http://localhost/university-erp-system` in your browser
+6. Log in using a seeded role account (see `database/schema.sql` for default credentials)
+
+---
+
+## 📁 Project Structure
 university-erp-system/
-├── admin/          # Admin dashboard and controls
-├── teacher/        # Teacher dashboard and controls
-├── student/         # Student dashboard and controls
+├── admin/           # Admin-only pages
+├── faculty/         # Faculty dashboard & pages
+├── student/         # Student dashboard & pages
+├── accountant/      # Fee management pages
+├── includes/        # Shared PHP components
 ├── assets/          # CSS, JS, images
-├── includes/        # Shared PHP includes (DB connection, auth, helpers)
-└── uploads/          # User-uploaded content
-```
+└── database/        # SQL schema
 
-## Security Notes
+---
 
-This project uses prepared statements for all database queries to prevent SQL injection, and validates/escapes user input across forms.
+## 📸 Screenshots
 
-## License
+### Login Page
+<img width="1920" height="955" alt="image" src="https://github.com/user-attachments/assets/6f01de31-e331-4bbc-95f0-fb30c79d959a" />
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+	@@ -40,5 +89,23 @@ Developed as an academic project to understand enterprise-level system design an
+### Student Dashboard
+<img width="1920" height="556" alt="image" src="https://github.com/user-attachments/assets/0c722223-44cf-48cf-87f1-c6def3aaf75f" />
+
+---
+
+## 🔭 Future Improvements
+
+- Email/SMS notifications for fee due dates
+- Exportable PDF report cards
+- Two-factor authentication for admin accounts
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👩‍💻 Author
+
+**Areeba Athar**
+[LinkedIn](https://linkedin.com/in/areeba-athar) · [GitHub](https://github.com/areebaathar-dev)
